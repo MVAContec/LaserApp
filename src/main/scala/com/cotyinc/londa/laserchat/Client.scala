@@ -25,8 +25,8 @@ class Client(laser: Laser, listener: ActorRef) extends Actor with ActorLogging {
 
   def receive = {
     case CommandFailed(_: Connect) =>
-      log.error("connect failed")
-      listener ! "connect failed"
+      log.error("connect failed2")
+      listener ! "connect failed2"
       context stop self
 
     case c @ Connected(remote, local) =>
