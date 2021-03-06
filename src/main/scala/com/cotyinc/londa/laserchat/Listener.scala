@@ -67,6 +67,10 @@ class Listener(laser: Laser, label: Label = null, queue: mutable.Queue[Any], res
         case "getstatus" =>
           log.info("in Listener.getstatus")
           client ! ByteString("getstatus\r\n")
+		  
+		case "stop" =>
+          log.info("in Listener.stop")
+          client ! ByteString("mark stop\r\n")
 
         case "getcurrentproject" =>
           log.info("in Listener.getcurrentproject")

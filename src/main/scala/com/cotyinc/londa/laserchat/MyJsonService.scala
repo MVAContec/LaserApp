@@ -88,6 +88,12 @@ class MyJsonService(system: ActorSystem) extends Directives with JsonSupport {
                                 val todo_queue: mutable.Queue[Any] = mutable.Queue("getstatus", "close")
                                 val listener: ActorRef = system.actorOf(Props(new Listener(laser, null, todo_queue, response)))
                                 listener ! Register(system.actorOf(Props(new Client(laser, listener))))
+								
+							  case "stop" =>
+                                logger.info("in stop")
+                                val todo_queue: mutable.Queue[Any] = mutable.Queue("stop", "close")
+                                val listener: ActorRef = system.actorOf(Props(new Listener(laser, null, todo_queue, response)))
+                                listener ! Register(system.actorOf(Props(new Client(laser, listener))))
 
                               case "getxml" =>
                                 logger.info("in getxml")

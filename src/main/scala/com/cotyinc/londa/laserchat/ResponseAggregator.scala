@@ -100,6 +100,7 @@ class ResponseAggregator( request: CPMSMessage) extends Actor with ActorLogging 
               case "getxml" => response.layout = Some(result(1).asInstanceOf[ByteString].utf8String)
               case "setxml" => log.debug("received useless setxml")
               case "loadproject" => log.debug("received useless loadproject")
+			  case "mark" => response.statusmsg = result(1).asInstanceOf[ByteString].utf8String
             }
           }
 
