@@ -87,8 +87,9 @@ trait JsonSupport extends SprayJsonSupport with DefaultJsonProtocol with NullOpt
 
 object LaserService extends App {
 
-  val config = ConfigFactory.parseFile(new File("src/main/resources/application.conf"))
-  implicit val system : ActorSystem = ActorSystem("LaserChat", config)
+  //val config = ConfigFactory.parseFile(new File("src/main/resources/application.conf")) commented 27/03
+  //implicit val system : ActorSystem = ActorSystem("LaserChat", config) commented 27/03
+  implicit val system : ActorSystem = ActorSystem("LaserChat")
   implicit val materializer : ActorMaterializer = ActorMaterializer()
   implicit val executionContext : ExecutionContextExecutor = system.dispatcher
 
