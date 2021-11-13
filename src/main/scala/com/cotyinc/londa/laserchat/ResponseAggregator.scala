@@ -38,7 +38,7 @@ class ResponseAggregator( request: CPMSMessage) extends Actor with ActorLogging 
   // "([A-Za-z0-9_+ äöüß]+)".r.findAllIn(extract_content("RESULT GETCURRENTPROJECT \"C:\\dyn2\\Masterlayouts\\CT Rel08 4N_3I.dprj\"").get).mkString(",")
   def extract_project(text_raw: String) : Option[String] = {
     extract_content(text_raw) match {
-      case Some(value) => Some("([A-Za-z0-9_+ äöüß]+)".r.findAllIn(value).filterNot(s =>
+      case Some(value) => Some("([A-Za-z0-9_\\-+ äöüß]+)".r.findAllIn(value).filterNot(s =>
         s.equals("memory") || s.equals("store") || s.equals("dprj") || s.equals("MsgStore1")
           || s.equals("C") || s.equals("dyn2") || s.equals("Masterlayouts")
       ).next)
