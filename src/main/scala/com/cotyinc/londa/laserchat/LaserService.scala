@@ -30,7 +30,7 @@ trait JsonSupport extends SprayJsonSupport with DefaultJsonProtocol with NullOpt
     try {
       Option(
         Json.parse(
-          scala.io.Source.fromURL("http://derolxapp01.cotyww.com:9000/json/laser/ip/" + ip).mkString
+          scala.io.Source.fromURL("http://derolxapp01.wella.team:9000/json/laser/ip/" + ip).mkString
         ).as[Laser]
       )
     }
@@ -40,7 +40,7 @@ trait JsonSupport extends SprayJsonSupport with DefaultJsonProtocol with NullOpt
     try {
       Option(
         Json.parse(
-          scala.io.Source.fromURL("http://derolxapp01.cotyww.com:9000/json/label/id/" + URLEncoder.encode(label, "UTF-8").replace("+", "%20") ).mkString
+          scala.io.Source.fromURL("http://derolxapp01.wella.team:9000/json/label/id/" + URLEncoder.encode(label, "UTF-8").replace("+", "%20") ).mkString
         ).as[Label]
       )
     }
@@ -50,7 +50,7 @@ trait JsonSupport extends SprayJsonSupport with DefaultJsonProtocol with NullOpt
     try {
       Option(
         Json.parse(
-          scala.io.Source.fromURL("http://derolxapp01.cotyww.com:9000/json/layout/" + layout_id ).mkString
+          scala.io.Source.fromURL("http://derolxapp01.wella.team:9000/json/layout/" + layout_id ).mkString
         ).as[Layout]
       )
     }

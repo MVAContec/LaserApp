@@ -17,7 +17,7 @@ class ResponseAggregator( request: CPMSMessage) extends Actor with ActorLogging 
   val response = ResponseMessage(request.laser.get.ipaddress, 0, request.command, "", None, None, None, None, None, None, None)
 
   def protocol(article: String, laser : String): Unit = {
-    val result = Http("http://derolxapp01.cotyww.com:9000/json/protocol").postForm(Seq("article" -> article, "laser" -> laser))
+    val result = Http("http://derolxapp01.wella.team:9000/json/protocol").postForm(Seq("article" -> article, "laser" -> laser))
       .header("Content-Type", "application/json")
       .header("Charset", "UTF-8")
       .option(HttpOptions.readTimeout(5000)).asString

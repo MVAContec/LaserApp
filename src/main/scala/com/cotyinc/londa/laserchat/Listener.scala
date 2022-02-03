@@ -20,17 +20,17 @@ class Listener(laser: Laser, label: Label = null, queue: mutable.Queue[Any], res
   implicit val layoutReads : Reads[LayoutId] = Json.reads[LayoutId]
 
   def getTexts(label: String): String = {
-    val url = "http://derolxapp01.cotyww.com:9000/json/texts/" + label
+    val url = "http://derolxapp01.wella.team:9000/json/texts/" + label
     scala.io.Source.fromURL(url).mkString
   }
 
   def getTextsFromLayout(layout_id: Long): String = {
-    val url = "http://derolxapp01.cotyww.com:9000/json/texts/layout/" + layout_id
+    val url = "http://derolxapp01.wella.team:9000/json/texts/layout/" + layout_id
     scala.io.Source.fromURL(url).mkString
   }
 
   def getLayout(name: String): String = {
-    val url = "http://derolxapp01.cotyww.com:9000/json/layout/name/" + URLEncoder.encode(name, "UTF-8").replace("+", "%20")
+    val url = "http://derolxapp01.wella.team:9000/json/layout/name/" + URLEncoder.encode(name, "UTF-8").replace("+", "%20")
     scala.io.Source.fromURL(url).mkString
   }
 

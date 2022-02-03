@@ -40,19 +40,19 @@ How to interact with the interface? POST a json message (see case class CPMSMess
 - transfer a label to the laser (Übertragung) [POST]
 
 ```
-curl -H "Content-Type: application/json" -d  '{"laser":"172.28.131.168", "port":20000, "command":"load","label":92130674}' http://derolxapp01.cotyww.com:8080/laserchat
+curl -H "Content-Type: application/json" -d  '{"laser":"172.28.131.168", "port":20000, "command":"load","label":92130674}' http://derolxapp01.wella.team:8080/laserchat
 ```
 
 - get status message of the laser [POST]
 
 ```
-curl -H "Content-Type: application/json" -d  '{"laser":"172.28.131.168", "port":20000, "command":"getstatus","label":"92130674"}' http://derolxapp01.cotyww.com:8080/laserchat
+curl -H "Content-Type: application/json" -d  '{"laser":"172.28.131.168", "port":20000, "command":"getstatus","label":"92130674"}' http://derolxapp01.wella.team:8080/laserchat
 ```
 
 - get actual project and text fields from laser and compare it with target values from label from database [POST]
 
 ```
-curl -H "Content-Type: application/json" -d  '{"laser":"172.28.131.168", "port":20000, "command":"compare","label":92130674}' http://derolxapp01.cotyww.com:8080/laserchat
+curl -H "Content-Type: application/json" -d  '{"laser":"172.28.131.168", "port":20000, "command":"compare","label":92130674}' http://derolxapp01.wella.team:8080/laserchat
 ```
 
 Send a GET request to retrieve information about a label:
@@ -60,7 +60,7 @@ Send a GET request to retrieve information about a label:
 - get label info (exists?, approved or not approved?, layout) [GET]
 
 ```
-curl http://derolxapp01.cotyww.com:8080/labelinfo/95844118
+curl http://derolxapp01.wella.team:8080/labelinfo/95844118
 ```
 
 ## Responses 
@@ -100,7 +100,7 @@ If label does not exist the response is a 404 http error.
 There is a simple alive-Resource `/alive` with simple GET:
 
 ```
-curl http://derolxapp01.cotyww.com:8080/alive  
+curl http://derolxapp01.wella.team:8080/alive  
 ```
 
 or
