@@ -8,8 +8,8 @@ scalaVersion := "2.12.6"
 enablePlugins(JavaAppPackaging)
 
 
-resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
-resolvers += "spray" at "http://repo.spray.io/"
+resolvers += "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/"
+resolvers += "spray" at "https://repo.spray.io/"
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.5.9",
